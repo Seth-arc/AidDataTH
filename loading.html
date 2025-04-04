@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AidData Training Hub - Loading</title>
+    <link rel="icon" type="image/x-icon" href="img/aiddata_icon.ico">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #115740;
+            --accent-color: #1a8660;
+            --dark-text: #1a1a1a;
+            --light-text: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .content-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            padding: 2rem;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            animation: contentFade 1s ease-out;
+        }
+
+        .logo-container {
+            position: relative;
+        }
+
+        .logo {
+            height: 55px;
+            opacity: 0.9;
+            animation: logoFloat 5s ease-in-out infinite;
+        }
+
+        .progress-container {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+            text-align: center;
+        }
+
+        .progress-bar {
+            height: 1px;
+            width: 100%;
+            background: rgba(17, 87, 64, 0.04);
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-fill {
+            position: absolute;
+            height: 100%;
+            background: rgba(26, 134, 96, 0.3);
+            width: 0%;
+            animation: fillProgress 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .progress-text {
+            color: var(--dark-text);
+            font-size: 1.125rem;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.2s forwards;
+        }
+
+        .progress-text span {
+            color: var(--accent-color);
+            font-weight: 400;
+        }
+
+        @keyframes contentFade {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { 
+                transform: translateY(0); 
+            }
+            50% { 
+                transform: translateY(-8px); 
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fillProgress {
+            0% { width: 0; }
+            20% { width: 5%; }
+            50% { width: 25%; }
+            80% { width: 75%; }
+            100% { width: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                padding: 2rem;
+                gap: 2.5rem;
+            }
+
+            .progress-text {
+                font-size: 1rem;
+            }
+
+            .logo {
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="logo-container">
+            <img src="img/logodark.png" alt="AidData Logo" class="logo">
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-text">Loading <span>AidData Training Hub</span></div>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = 'lms.html';
+        }, 3000);
+    </script>
+</body>
+</html> 

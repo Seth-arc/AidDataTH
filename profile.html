@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - AidData Training Hub</title>
+    <link rel="icon" type="image/x-icon" href="img/aiddata_icon.ico">
+    <link rel="stylesheet" href="lms.css">
+    <link rel="stylesheet" href="profile.css">
+    <meta name="description" content="AidData Training Hub - User Profile Management">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="lms-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <a href="lms.html">
+                    <img src="img/logodark.png" alt="AidData Logo" class="logo">
+                </a>
+            </div>
+            
+            <div class="header-actions">
+                <button class="header-button notification-button" aria-label="Notifications">
+                    <span class="notification-badge"></span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                </button>
+                <div class="user-profile-menu">
+                    <button class="profile-toggle" aria-label="User menu">
+                        <img src="img/default-avatar.png" alt="Profile" id="profileMenuAvatar" class="profile-avatar">
+                    </button>
+                    <div class="profile-dropdown">
+                        <div class="profile-header">
+                            <img src="img/default-avatar.png" alt="Profile" id="profileDropdownAvatar" class="dropdown-avatar">
+                            <div class="profile-info">
+                                <h4 id="profileDropdownName">Loading...</h4>
+                                <p id="profileDropdownEmail">loading@example.com</p>
+                            </div>
+                        </div>
+                        <ul class="profile-menu">
+                            <li><a href="profile.html" class="active">My Profile</a></li>
+                            <li><a href="dashboard.html">My Courses</a></li>
+                            <li><a href="certificates.html">Certificates</a></li>
+                            <li class="admin-only"><a href="admin.html">Admin Panel</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" id="logoutButton">Log Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="lms-main">
+        <div class="profile-container">
+            <div class="profile-sidebar">
+                <div class="profile-sidebar-header">
+                    <div class="profile-image-container">
+                        <img src="img/default-avatar.png" alt="Profile picture" id="profileSidebarAvatar" class="profile-image">
+                        <button class="change-photo-button" id="changePhotoButton">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="13" r="4"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                    <h1 id="profileUsername">Loading...</h1>
+                    <p id="profileRole" class="profile-role">Student</p>
+                </div>
+                <nav class="profile-navigation">
+                    <ul>
+                        <li>
+                            <a href="#personal" class="active" data-section="personal">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                Personal Information
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#security" data-section="security">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
+                                Security
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#notifications" data-section="notifications">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                </svg>
+                                Notifications
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#preferences" data-section="preferences">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                </svg>
+                                Preferences
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="sidebar-footer">
+                    <button id="deleteAccountButton" class="delete-account-button">
+                        Delete Account
+                    </button>
+                </div>
+            </div>
+            
+            <div class="profile-content">
+                <!-- Personal Information Section -->
+                <section id="personal" class="profile-section active">
+                    <div class="section-header">
+                        <h2>Personal Information</h2>
+                        <p>Update your personal details and how others see you on the platform</p>
+                    </div>
+                    
+                    <form id="personalInfoForm" class="profile-form">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" disabled>
+                            <p class="helper-text">To change your email, go to the Security tab.</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="organization">Organization</label>
+                            <input type="text" id="organization" name="organization">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title</label>
+                            <input type="text" id="jobTitle" name="jobTitle">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="bio">Professional Bio</label>
+                            <textarea id="bio" name="bio" rows="4"></textarea>
+                            <p class="helper-text">Brief description about your professional background and interests.</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="primary-button">Save Changes</button>
+                            <button type="reset" class="secondary-button">Reset</button>
+                        </div>
+                    </form>
+                </section>
+                
+                <!-- Security Section -->
+                <section id="security" class="profile-section">
+                    <div class="section-header">
+                        <h2>Security</h2>
+                        <p>Manage your password and security settings</p>
+                    </div>
+                    
+                    <div class="security-status">
+                        <div class="status-item">
+                            <span class="status-icon" id="verificationStatus">
+                                <!-- Icon will be inserted by JavaScript -->
+                            </span>
+                            <div class="status-info">
+                                <h3>Email Verification</h3>
+                                <p id="verificationMessage">Loading verification status...</p>
+                                <button id="resendVerificationButton" class="text-button" style="display: none;">
+                                    Resend verification email
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Change Email</h3>
+                        <form id="changeEmailForm" class="profile-form">
+                            <div class="form-group">
+                                <label for="currentEmail">Current Email</label>
+                                <input type="email" id="currentEmail" name="currentEmail" disabled>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newEmail">New Email</label>
+                                <input type="email" id="newEmail" name="newEmail" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="passwordForEmail">Current Password</label>
+                                <input type="password" id="passwordForEmail" name="passwordForEmail" required>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="primary-button">Update Email</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Change Password</h3>
+                        <form id="changePasswordForm" class="profile-form">
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword" name="currentPassword" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" id="newPassword" name="newPassword" required minlength="8">
+                                <p class="helper-text">Password must be at least 8 characters and include numbers, letters, and special characters.</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm New Password</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="primary-button">Update Password</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="security-info">
+                        <h3>Login Activity</h3>
+                        <div class="activity-item">
+                            <span class="activity-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </span>
+                            <div class="activity-info">
+                                <h4>Last Login</h4>
+                                <p id="lastLoginDate">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Notifications Section -->
+                <section id="notifications" class="profile-section">
+                    <div class="section-header">
+                        <h2>Notifications</h2>
+                        <p>Manage when and how you receive updates</p>
+                    </div>
+                    
+                    <form id="notificationsForm" class="profile-form">
+                        <div class="notification-group">
+                            <h3>Email Notifications</h3>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="courseUpdates" name="courseUpdates" checked>
+                                <label for="courseUpdates">
+                                    <span class="checkbox-title">Course Updates</span>
+                                    <span class="checkbox-description">Receive emails about courses you're enrolled in</span>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="newCourses" name="newCourses" checked>
+                                <label for="newCourses">
+                                    <span class="checkbox-title">New Courses</span>
+                                    <span class="checkbox-description">Be the first to know when new courses are available</span>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="completionReminders" name="completionReminders" checked>
+                                <label for="completionReminders">
+                                    <span class="checkbox-title">Completion Reminders</span>
+                                    <span class="checkbox-description">Get reminders to finish courses you've started</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="notification-group">
+                            <h3>Platform Notifications</h3>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="discussionReplies" name="discussionReplies" checked>
+                                <label for="discussionReplies">
+                                    <span class="checkbox-title">Discussion Replies</span>
+                                    <span class="checkbox-description">Notify when someone replies to your discussion posts</span>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="certificateAwarded" name="certificateAwarded" checked>
+                                <label for="certificateAwarded">
+                                    <span class="checkbox-title">Certificate Awarded</span>
+                                    <span class="checkbox-description">Notify when you earn a new certificate</span>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="systemAnnouncements" name="systemAnnouncements" checked>
+                                <label for="systemAnnouncements">
+                                    <span class="checkbox-title">System Announcements</span>
+                                    <span class="checkbox-description">Important updates about the Training Hub</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="primary-button">Save Preferences</button>
+                        </div>
+                    </form>
+                </section>
+                
+                <!-- Preferences Section -->
+                <section id="preferences" class="profile-section">
+                    <div class="section-header">
+                        <h2>Preferences</h2>
+                        <p>Customize your experience on the AidData Training Hub</p>
+                    </div>
+                    
+                    <form id="preferencesForm" class="profile-form">
+                        <div class="form-group">
+                            <label for="language">Language</label>
+                            <select id="language" name="language">
+                                <option value="en" selected>English</option>
+                                <option value="fr">Français</option>
+                                <option value="es">Español</option>
+                                <option value="pt">Português</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="timezone">Timezone</label>
+                            <select id="timezone" name="timezone">
+                                <option value="UTC" selected>UTC (Coordinated Universal Time)</option>
+                                <option value="EST">Eastern Standard Time (UTC-5)</option>
+                                <option value="CST">Central Standard Time (UTC-6)</option>
+                                <option value="MST">Mountain Standard Time (UTC-7)</option>
+                                <option value="PST">Pacific Standard Time (UTC-8)</option>
+                                <option value="GMT">Greenwich Mean Time (UTC+0)</option>
+                                <option value="CET">Central European Time (UTC+1)</option>
+                                <option value="EET">Eastern European Time (UTC+2)</option>
+                                <option value="IST">India Standard Time (UTC+5:30)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="darkMode" name="darkMode">
+                            <label for="darkMode">
+                                <span class="checkbox-title">Dark Mode</span>
+                                <span class="checkbox-description">Use dark theme throughout the platform</span>
+                            </label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">
+                                <span class="checkbox-title">Subscribe to Newsletter</span>
+                                <span class="checkbox-description">Receive updates about new research, courses, and AidData insights</span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="primary-button">Save Preferences</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Upload Photo Modal -->
+    <div class="modal" id="uploadPhotoModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2>Upload Profile Photo</h2>
+            <form id="uploadPhotoForm">
+                <div class="upload-area">
+                    <input type="file" id="photoInput" accept="image/*" hidden>
+                    <div class="upload-preview">
+                        <img id="photoPreview" src="img/default-avatar.png" alt="Preview">
+                    </div>
+                    <button type="button" id="browseButton" class="secondary-button">Choose Photo</button>
+                </div>
+                <div class="upload-instructions">
+                    <p>Upload a square image for best results. Maximum size: 2MB.</p>
+                    <p>Supported formats: JPG, PNG, GIF</p>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="primary-button">Save Photo</button>
+                    <button type="button" class="secondary-button" id="cancelUpload">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Account Confirmation Modal -->
+    <div class="modal" id="deleteAccountModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2>Delete Your Account?</h2>
+            <div class="warning-message">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <p>This action <strong>cannot be undone</strong>. All your data, course progress, and earned certificates will be permanently deleted.</p>
+            </div>
+            <form id="deleteAccountForm">
+                <div class="form-group">
+                    <label for="deleteConfirmPassword">Enter your password to confirm</label>
+                    <input type="password" id="deleteConfirmPassword" name="deleteConfirmPassword" required>
+                </div>
+                <div class="confirmation-checkbox">
+                    <input type="checkbox" id="confirmDelete" name="confirmDelete" required>
+                    <label for="confirmDelete">I understand that this action is permanent</label>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="secondary-button" id="cancelDelete">Cancel</button>
+                    <button type="submit" class="danger-button">Delete My Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Status messages -->
+    <div class="toast-container">
+        <!-- Toast notifications will be inserted here by JavaScript -->
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="img/logo.png" alt="AidData Logo" class="footer-logo">
+                <p>AidData is a research lab at William & Mary's Global Research Institute</p>
+                <div class="social-links">
+                    <a href="https://twitter.com/AidData" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/aiddata" target="_blank" rel="noopener noreferrer" aria-label="Connect with us on LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://github.com/aiddata" target="_blank" rel="noopener noreferrer" aria-label="View our code on GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="https://www.aiddata.org/about" target="_blank">About Us</a></li>
+                    <li><a href="https://www.aiddata.org/data" target="_blank">Data</a></li>
+                    <li><a href="https://www.aiddata.org/publications" target="_blank">Publications</a></li>
+                    <li><a href="https://www.aiddata.org/blog" target="_blank">Blog</a></li>
+                    <li><a href="https://www.aiddata.org/careers" target="_blank">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="https://www.aiddata.org/methods" target="_blank">Methods</a></li>
+                    <li><a href="https://www.aiddata.org/datasets" target="_blank">Datasets</a></li>
+                    <li><a href="https://www.aiddata.org/geoquery" target="_blank">GeoQuery</a></li>
+                    <li><a href="https://www.aiddata.org/china-research-lab" target="_blank">China Research Lab</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <address>
+                    If you're looking to partner up for online, hybrid or in-person trainings, please reach out to<br>
+                    <a href="mailto:training@aiddata.org">training@aiddata.org</a>
+                </address>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 AidData. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="https://www.aiddata.org/privacy-policy" target="_blank">Privacy Policy</a>
+                    <a href="https://www.aiddata.org/terms-and-conditions" target="_blank">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load Firebase first -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
+        
+        try {
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+              apiKey: "AIzaSyBvpWqdzWmcM_aunijJYcYCfqboPZ2-iH4",
+              authDomain: "lmshub-bb494.firebaseapp.com",
+              projectId: "lmshub-bb494",
+              storageBucket: "lmshub-bb494.firebasestorage.app",
+              messagingSenderId: "412269993799",
+              appId: "1:412269993799:web:81093e94ca87460e623662",
+              measurementId: "G-5J3V7RGFC8"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+            
+            // Make Firebase app available globally
+            window.firebaseApp = app;
+        } catch (error) {
+            console.warn("Firebase initialization failed:", error);
+            // Create toast notification
+            showToast("Error connecting to services. Some features may be unavailable.", "error");
+        }
+    </script>
+    
+    <!-- Load our auth and profile scripts -->
+    <script type="module" src="profile.js"></script>
+</body>
+</html>

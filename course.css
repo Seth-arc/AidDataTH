@@ -1,0 +1,1768 @@
+/* Course Page Specific Styles */
+
+/* Course Header */
+.course-header {
+    background: linear-gradient(135deg, 
+        rgba(17, 87, 64, 0.04) 0%,
+        rgba(26, 128, 95, 0.08) 100%
+    );
+    padding: 6rem 2rem 3rem;
+    margin-top: 80px;
+    border-bottom: 1px solid rgba(17, 87, 64, 0.1);
+}
+
+.course-header-container {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.course-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+.course-breadcrumbs a {
+    color: var(--light-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.course-breadcrumbs a:hover {
+    color: var(--primary-color);
+}
+
+.course-breadcrumbs svg {
+    color: var(--light-text);
+    opacity: 0.6;
+}
+
+.course-header-content h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.course-description {
+    font-size: 1.2rem;
+    color: var(--light-text);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.course-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.course-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.course-stats .stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--light-text);
+}
+
+.course-stats .stat svg {
+    width: 18px;
+    height: 18px;
+    color: var(--primary-color);
+}
+
+.course-header-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 12px 24px rgba(17, 87, 64, 0.12);
+    height: 100%;
+    max-height: 300px;
+}
+
+.course-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+.course-cover:hover {
+    transform: scale(1.05);
+}
+
+/* Course Categories */
+.course-categories {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.category-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid rgba(17, 87, 64, 0.2);
+    color: var(--primary-color);
+    background: rgba(17, 87, 64, 0.05);
+    border-radius: 3px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.category-tag:hover {
+    background: rgba(17, 87, 64, 0.1);
+}
+
+.category-tag.tutorial {
+    border-color: rgba(156, 39, 176, 0.3);
+    background: rgba(156, 39, 176, 0.05);
+    color: #9c27b0;
+}
+
+.category-tag.badge {
+    border-color: rgba(255, 152, 0, 0.3);
+    background: rgba(255, 152, 0, 0.05);
+    color: #f57c00;
+}
+
+.category-tag.simulation {
+    border-color: rgba(33, 150, 243, 0.3);
+    background: rgba(33, 150, 243, 0.05);
+    color: #2196f3;
+}
+
+/* Course Navigation */
+.course-navigation {
+    background: white;
+    border-bottom: 1px solid rgba(17, 87, 64, 0.1);
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(17, 87, 64, 0.05);
+}
+
+.course-nav-container {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.course-nav-items {
+    display: flex;
+    gap: 1rem;
+}
+
+.course-nav-item {
+    color: var(--light-text);
+    text-decoration: none;
+    padding: 1.25rem 1rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.course-nav-item:hover {
+    color: var(--primary-color);
+}
+
+.course-nav-item.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    font-weight: 500;
+}
+
+.course-progress {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.progress-text strong {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-left: 0.25rem;
+}
+
+.progress-bar {
+    width: 100px;
+    height: 6px;
+    background: rgba(17, 87, 64, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+/* Course Content Layout */
+.course-content {
+    padding: 3rem 2rem;
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 3rem;
+}
+
+.main-content {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(17, 87, 64, 0.08);
+    overflow: hidden;
+}
+
+.content-section {
+    padding: 3rem;
+    border-bottom: 1px solid rgba(17, 87, 64, 0.1);
+}
+
+.content-section:last-child {
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(17, 87, 64, 0.1);
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: var(--light-text);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* Overview Section */
+.overview-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2.5rem 0;
+}
+
+.overview-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(17, 87, 64, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.overview-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(17, 87, 64, 0.08);
+}
+
+.overview-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.overview-card h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--dark-text);
+    margin-bottom: 1.25rem;
+}
+
+.learning-objectives {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.learning-objectives li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--light-text);
+    line-height: 1.5;
+}
+
+.learning-objectives li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.course-trailer {
+    margin-top: 3rem;
+}
+
+.course-trailer h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--dark-text);
+    margin-bottom: 1.25rem;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(17, 87, 64, 0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Modules Section */
+.module-accordion {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.module-item {
+    background: white;
+    border: 1px solid rgba(17, 87, 64, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.module-item:hover {
+    box-shadow: 0 4px 12px rgba(17, 87, 64, 0.08);
+}
+
+.module-header {
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    cursor: pointer;
+}
+
+.module-progress-indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.module-item.completed .module-progress-indicator {
+    background: var(--primary-color);
+    color: white;
+}
+
+.module-item.in-progress .module-progress-indicator {
+    background: rgba(17, 87, 64, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-circle::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: white;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.progress-circle .progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--primary-color);
+    z-index: 0;
+}
+
+.module-item.locked .module-progress-indicator {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.check-icon {
+    width: 16px;
+    height: 16px;
+    stroke-width: 3;
+}
+
+.lock-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.module-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--dark-text);
+    margin: 0;
+}
+
+.module-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.module-duration {
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.module-toggle {
+    background: none;
+    border: none;
+    color: var(--light-text);
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.module-toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
+.module-item.active .module-toggle {
+    transform: rotate(180deg);
+}
+
+.module-content {
+    padding: 0 1.5rem 1.5rem;
+    border-top: 1px solid rgba(17, 87, 64, 0.05);
+}
+
+.module-content p {
+    font-size: 1rem;
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.lessons-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.lesson-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.lesson-item:hover {
+    background: rgba(17, 87, 64, 0.03);
+}
+
+.lesson-status {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lesson-item.completed .lesson-status {
+    background: var(--primary-color);
+    color: white;
+}
+
+.lesson-item.in-progress .lesson-status {
+    position: relative;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: block;
+}
+
+.lesson-item.locked .lesson-status {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.lesson-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.lesson-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--dark-text);
+    margin: 0 0 0.25rem;
+}
+
+.lesson-duration {
+    font-size: 0.85rem;
+    color: var(--light-text);
+}
+
+.lesson-type {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--light-text);
+}
+
+.lesson-type svg {
+    width: 16px;
+    height: 16px;
+    color: var(--primary-color);
+}
+
+.module-locked-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 6px;
+    text-align: center;
+}
+
+.module-locked-message svg {
+    width: 32px;
+    height: 32px;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.module-locked-message p {
+    font-size: 0.95rem;
+    color: var(--light-text);
+    margin: 0;
+}
+
+/* Instructors Section */
+.instructors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.instructor-card {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid rgba(17, 87, 64, 0.1);
+    transition: all 0.3s ease;
+}
+
+.instructor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(17, 87, 64, 0.08);
+}
+
+.instructor-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(17, 87, 64, 0.1);
+}
+
+.instructor-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.instructor-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.instructor-title {
+    font-size: 0.95rem;
+    color: var(--light-text);
+    margin: 0;
+}
+
+.instructor-bio {
+    font-size: 0.95rem;
+    color: var(--light-text);
+    line-height: 1.5;
+    margin: 0.5rem 0 1rem;
+}
+
+.instructor-social {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.social-link {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(17, 87, 64, 0.05);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.social-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+.instructor-contact {
+    margin-top: 2rem;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, 
+        rgba(17, 87, 64, 0.05) 0%,
+        rgba(26, 128, 95, 0.1) 100%
+    );
+    border-radius: 8px;
+    border: 1px solid rgba(17, 87, 64, 0.1);
+}
+
+.contact-icon {
+    width: 64px;
+    height: 64px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    box-shadow: 0 8px 16px rgba(17, 87, 64, 0.1);
+}
+
+.contact-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin: 0 0 0.75rem;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: var(--light-text);
+    margin: 0 0 1.25rem;
+    line-height: 1.6;
+}
+
+.contact-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(17, 87, 64, 0.15);
+}
+
+/* Resources Section */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.resource-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid rgba(17, 87, 64, 0.1);
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(17, 87, 64, 0.08);
+}
+
+.resource-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(17, 87, 64, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+}
+
+.resource-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.resource-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.resource-info h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--dark-text);
+    margin: 0;
+}
+
+.resource-info p {
+    font-size: 0.95rem;
+    color: var(--light-text);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.resource-link {
+    margin-top: auto;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.resource-link:hover {
+    color: var(--accent-color);
+}
+
+.resource-link::after {
+    content: '→';
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.resource-link:hover::after {
+    transform: translateX(4px);
+}
+
+/* Discussions Section */
+.discussion-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.discussion-filters {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    padding: 0.5rem 1rem;
+    background: white;
+    border: 1px solid rgba(17, 87, 64, 0.1);
+    border-radius: 4px;
+    color: var(--light-text);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-button:hover {
+    background: rgba(17, 87, 64, 0.02);
+    border-color: rgba(17, 87, 64, 0.2);
+    color: var(--primary-color);
+}
+
+.filter-button.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.new-discussion-button {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.new-discussion-button:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(17, 87, 64, 0.15);
+}
+
+.new-discussion-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+.discussion-list {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.discussion-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid rgba(17, 87, 64, 0.1);
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.discussion-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(17, 87, 64, 0.08);
+}
+
+.discussion-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.discussion-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.author-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--dark-text);
+}
+
+.instructor-badge {
+    font-size: 0.75rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    margin-left: 0.5rem;
+}
+
+.discussion-tags {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.discussion-tag {
+    font-size: 0.75rem;
+    background: rgba(17, 87, 64, 0.05);
+    color: var(--primary-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+}
+
+.discussion-tag.module-1 {
+    background: rgba(156, 39, 176, 0.05);
+    color: #9c27b0;
+}
+
+.discussion-tag.module-2 {
+    background: rgba(33, 150, 243, 0.05);
+    color: #2196f3;
+}
+
+.discussion-tag.general {
+    background: rgba(76, 175, 80, 0.05);
+    color: #4caf50;
+}
+
+.discussion-time {
+    font-size: 0.85rem;
+    color: var(--light-text);
+}
+
+.discussion-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--dark-text);
+    margin: 0 0 0.5rem;
+}
+
+.discussion-preview {
+    font-size: 0.95rem;
+    color: var(--light-text);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.discussion-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.75rem;
+}
+
+.replies-count {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--light-text);
+}
+
+.replies-count svg {
+    width: 16px;
+    height: 16px;
+    color: var(--primary-color);
+}
+
+.discussion-item.instructor-response {
+    border-left: 3px solid var(--primary-color);
+}
+
+.discussion-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: white;
+    border: 1px solid rgba(17, 87, 64, 0.1);
+    border-radius: 4px;
+    color: var(--dark-text);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover:not([disabled]) {
+    background: rgba(17, 87, 64, 0.05);
+    color: var(--primary-color);
+}
+
+.nav-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.nav-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-indicators {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.page-number {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    color: var(--light-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-number:hover {
+    background: rgba(17, 87, 64, 0.05);
+    color: var(--primary-color);
+}
+
+.page-number.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    display: grid;
+    gap: 2rem;
+    align-content: start;
+}
+
+.sidebar-section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(17, 87, 64, 0.08);
+    overflow: hidden;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(17, 87, 64, 0.1);
+}
+
+.sidebar-header h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--dark-text);
+    margin: 0;
+}
+
+.sidebar-content {
+    padding: 1.5rem;
+}
+
+/* Continue Learning Section */
+.current-lesson h4 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--light-text);
+    margin: 0 0 1rem;
+}
+
+.lesson-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.lesson-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(17, 87, 64, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    margin-bottom: 1.25rem;
+}
+
+.lesson-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.lesson-details h5 {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--dark-text);
+    margin: 0 0 0.5rem;
+}
+
+.lesson-module {
+    display: inline-block;
+    font-size: 0.85rem;
+    background: rgba(17, 87, 64, 0.05);
+    color: var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+}
+
+.time-remaining {
+    font-size: 0.85rem;
+    color: var(--light-text);
+    display: block;
+    margin: 0.5rem 0 1rem;
+}
+
+.lesson-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.progress-text {
+    font-size: 0.8rem;
+    color: var(--light-text);
+}
+
+.continue-button {
+    width: 100%;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.continue-button:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(17, 87, 64, 0.15);
+}
+
+.continue-button svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.continue-button:hover svg {
+    transform: translateX(3px);
+}
+
+/* Progress Stats */
+.progress-stats {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.progress-stat {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--dark-text);
+}
+
+/* Badge Preview */
+.badge-preview {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.badge-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(17, 87, 64, 0.15));
+    animation: badgePulse 2s infinite alternate;
+}
+
+@keyframes badgePulse {
+    from {
+        transform: scale(1);
+        filter: drop-shadow(0 4px 6px rgba(17, 87, 64, 0.15));
+    }
+    to {
+        transform: scale(1.05);
+        filter: drop-shadow(0 6px 12px rgba(17, 87, 64, 0.25));
+    }
+}
+
+.badge-info {
+    flex: 1;
+}
+
+.badge-info h4 {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--dark-text);
+    margin: 0 0 0.5rem;
+}
+
+.badge-info p {
+    font-size: 0.9rem;
+    color: var(--light-text);
+    margin: 0 0 1rem;
+    line-height: 1.5;
+}
+
+/* Related Courses */
+.related-courses {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.related-course {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.course-thumbnail {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.related-course:hover .course-thumbnail {
+    transform: scale(1.05);
+}
+
+.course-info {
+    flex: 1;
+}
+
+.course-info h4 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--dark-text);
+    margin: 0 0 0.25rem;
+    line-height: 1.3;
+}
+
+.course-info p {
+    font-size: 0.85rem;
+    color: var(--light-text);
+    margin: 0 0 0.5rem;
+    line-height: 1.4;
+}
+
+.view-course {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.view-course:hover {
+    color: var(--accent-color);
+}
+
+/* Profile Button in Header */
+.profile-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(17, 87, 64, 0.15);
+    transition: all 0.3s ease;
+}
+
+.profile-button:hover .profile-avatar {
+    transform: scale(1.1);
+    box-shadow: 0 3px 6px rgba(17, 87, 64, 0.25);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1200px) {
+    .course-header-container {
+        grid-template-columns: 1fr 300px;
+        gap: 3rem;
+    }
+    
+    .content-wrapper {
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .overview-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .course-navigation {
+        top: 70px;
+    }
+    
+    .course-nav-container {
+        flex-direction: column;
+        padding: 1rem 2rem;
+        gap: 1rem;
+    }
+    
+    .course-progress {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 992px) {
+    .course-header-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .course-header-image {
+        max-height: 250px;
+    }
+    
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .instructors-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .course-header {
+        padding: 6rem 1.5rem 2rem;
+        margin-top: 60px;
+    }
+    
+    .course-header-content h1 {
+        font-size: 2rem;
+    }
+    
+    .course-nav-items {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .course-nav-item {
+        padding: 1rem 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .course-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+    
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .discussion-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .discussion-filters {
+        justify-content: center;
+    }
+    
+    .new-discussion-button {
+        align-self: center;
+    }
+    
+    .sidebar {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .instructor-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .instructor-social {
+        justify-content: center;
+    }
+    
+    .discussion-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .discussion-author {
+        width: 100%;
+    }
+    
+    .badge-preview {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .badge-info {
+        align-items: center;
+    }
+}
+
+/* Animation for Module Toggle */
+.module-item.active .module-content {
+    animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover Effects */
+.resource-card:hover .resource-icon {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.lesson-item.completed:hover {
+    background: rgba(17, 87, 64, 0.08);
+}
+
+.lesson-item.in-progress {
+    background: rgba(17, 87, 64, 0.05);
+    border-left: 3px solid var(--primary-color);
+}
+
+.lesson-item.locked {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Focus States */
+.course-nav-item:focus-visible,
+.resource-link:focus-visible,
+.contact-link:focus-visible,
+.view-course:focus-visible,
+.continue-button:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+}
+
+/* General utility classes */
+.text-primary {
+    color: var(--primary-color);
+}
+
+.text-accent {
+    color: var(--accent-color);
+}
+
+.text-light {
+    color: var(--light-text);
+}
+
+.text-dark {
+    color: var(--dark-text);
+}
+
+.font-weight-light {
+    font-weight: 300;
+}
+
+.font-weight-regular {
+    font-weight: 400;
+}
+
+.font-weight-medium {
+    font-weight: 500;
+}
+
+.font-weight-bold {
+    font-weight: 700;
+}
+
+/* Notification Panel Styles for course page */
+.notifications-panel {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 360px;
+    max-width: 90vw;
+    max-height: calc(100vh - 80px);
+    background: white;
+    border-left: 1px solid rgba(17, 87, 64, 0.1);
+    box-shadow: -4px 0 16px rgba(17, 87, 64, 0.1);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.notifications-panel.active {
+    transform: translateX(0);
+}
+
+.notifications-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(17, 87, 64, 0.1);
+}
+
+.notifications-header h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--dark-text);
+    margin: 0;
+}
+
+.notification-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mark-all-read {
+    color: var(--primary-color);
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.mark-all-read:hover {
+    color: var(--accent-color);
+}
+
+.close-notifications {
+    background: none;
+    border: none;
+    color: var(--light-text);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-notifications:hover {
+    color: var(--dark-text);
+}
+
+.notifications-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 0;
+}
+
+.notification-group {
+    margin-bottom: 1.5rem;
+}
+
+.notification-group-header {
+    padding: 0 1.5rem;
+    margin: 0 0 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--light-text);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.notification-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.notification-item:hover {
+    background: rgba(17, 87, 64, 0.03);
+}
+
+.notification-item.unread::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--primary-color);
+}
+
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(17, 87, 64, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-content h4 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--dark-text);
+    margin: 0 0 0.25rem;
+}
+
+.notification-content p {
+    font-size: 0.9rem;
+    color: var(--light-text);
+    margin: 0 0 0.5rem;
+    line-height: 1.5;
+}
+
+.notification-time {
+    font-size: 0.8rem;
+    color: var(--light-text);
+    opacity: 0.8;
+}
+
+.notification-item.unread .notification-icon {
+    background: rgba(17, 87, 64, 0.2);
+}
+
+.notification-item.unread .notification-content h4 {
+    font-weight: 600;
+}
+
+/* Course specific JavaScript */
+.module-content {
+    display: none;
+}
+
+.module-item.active .module-content {
+    display: block;
+}
